@@ -8,7 +8,7 @@ app = FastAPI()
 @app.get("/PlayTimeGenre/{genero}")
 async def PlayTimeGenre(genero: str):
     # Leemos el archivo parquet
-    genre_df = pd.read_csv("C:/Users/Coder/Documents/PI_ML_OPS/Datos/data/play_time_genre.csv")
+    genre_df = pd.read_csv("data/play_time_genre.csv")
 
 def PlayTimeGenre(genero: str):
     # Se filtra el DataFrame por el género indicado
@@ -31,7 +31,7 @@ def PlayTimeGenre(genero: str):
 @app.get("/UserForGenre/{genero}")
 async def UserForGenre(genero: str):
      # Leemos el archivo parquet
-    df_filtered = pd.read_csv("C:/Users/Coder/Documents/PI_ML_OPS/Datos/df_user_genre.csv")
+    df_filtered = pd.read_csv("/data/df_user_genre.csv")
     
     # Filtramos el DataFrame por el género dado
     df_filtered = df_user_genre[df_user_genre['genres'].str.lower() == genero.lower()]
@@ -60,7 +60,7 @@ async def UserForGenre(genero: str):
 async  def UsersRecommend(df_users_recommend, año):
     
       # Leemos el archivo csv
-    df_filtered = pd.read_csv("C:/Users/Coder/Documents/PI_ML_OPS/Datos/df_users_recommend.csv")
+    df_filtered = pd.read_csv("/data/df_users_recommend.csv")
     # Se realiza un filtrado por año
    
     df_filtered = df_users_recommend[df_users_recommend['release_date'] == año]
@@ -85,7 +85,7 @@ async  def UsersRecommend(df_users_recommend, año):
 async def UsersWorstDeveloper(df_worst_dev, año):
     
       # Leemos el archivo csv
-    df_filtered = pd.read_csv("C:/Users/Coder/Documents/PI_ML_OPS/Datos/df_worst_dev.csv")
+    df_filtered = pd.read_csv("/data/df_worst_dev.csv")
     # Filtrar por año
     df_filtered = df_worst_dev[df_worst_dev['release_date'] == año]
 
@@ -108,7 +108,7 @@ async def UsersWorstDeveloper(df_worst_dev, año):
 #5<<
 @app.get("/sentiment_analysis/{empresa_desarrolladora}")
 async def sentiment_analysis(developer):
-    df_empresa = pd.read_csv("C:/Users/Coder/Documents/PI_ML_OPS/Datos/df_sentiment.csv")
+    df_empresa = pd.read_csv("/data/df_sentiment.csv")
     
     # Se filtra el DataFrame para obtener solo las filas que corresponden al developer
     df_empresa = df_sentiment[df_sentiment['developer'] == developer]
