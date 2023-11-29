@@ -17,16 +17,12 @@ Se nos proporcionaron 3 archivos json y un diccionario de datos, a los cuales de
 [link](https://drive.google.com/drive/folders/18ubpDrUfChnage6gRNDTu68SxJlr4_xZ?usp=drive_link).
 
 
-## Transformaciones (ETL)
+## Transformaciones (ETL) y EDA
 
 Se realizaron las transformaciones de cada dataset por separado para un mejor entendimiento de los datos:
 [link]https://github.com/Karls91/PROY-INDIVIDUAL-ML/blob/main/ETL/Items.ipynb   Transformaciónes dataset "australian_users_items"
 [link]https://github.com/Karls91/PROY-INDIVIDUAL-ML/blob/main/ETL/Reviews.ipynb Transformaciónes dataset "australian_users_reviews"
 [link]https://github.com/Karls91/PROY-INDIVIDUAL-ML/blob/main/ETL/games.ipynb   Transformaciónes dataset "output_steam_games"
-
-## Análisis exploratorio de los datos (EDA)
-
-[link]https://github.com/Karls91/PROY-INDIVIDUAL-ML/blob/main/EDA/EDA.ipynb 
 
 
 ## Desarrollo de FastAPI
