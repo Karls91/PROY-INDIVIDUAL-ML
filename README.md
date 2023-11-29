@@ -48,6 +48,6 @@ Se realiza el deployment en la plataforma de Render para disponibilizar las cons
 
 Funciones realizadas: [Link]https://github.com/Karls91/PROY-INDIVIDUAL-ML/blob/main/endpoints.ipynb
 
-
+## Video: https://drive.google.com/drive/folders/1np69iiXHDf-tcMXtKyQjKysgQcPLmPDM?usp=sharing
 
 
