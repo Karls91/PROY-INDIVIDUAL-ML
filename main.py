@@ -9,9 +9,12 @@ from fastapi.templating import Jinja2Templates
 
 app = FastAPI()
 
+rom fastapi import HTTPException
+
 @app.exception_handler(HTTPException)
 async def http_exception_handler(request: Request, exc: HTTPException):
     return templates.TemplateResponse("error.html", {"request": request, "message": f"Error HTTP: {exc}"})
+
 
 templates = Jinja2Templates(directory="templates")
 
