@@ -22,7 +22,7 @@ templates = Jinja2Templates(directory="templates")
 @app.get("/PlayTimeGenre/{genero}", response_class=HTMLResponse)
 async def PlayTimeGenre(request: Request, genero: str):
     # Leemos el archivo CSV
-    genre_df = pd.read_csv("C:/Users/Coder/Documents/PI_ML_OPS/Datos/data/play_time_genre.csv")
+    genre_df = pd.read_csv("/data/play_time_genre.csv")
 
     # Se convierte el género ingresado a minúsculas para hacer la comparación sin importar la capitalización
     genero = genero.lower()
@@ -50,7 +50,7 @@ async def PlayTimeGenre(request: Request, genero: str):
 @app.get("/UserForGenre/{genero}", response_class=HTMLResponse)
 async def UserForGenre(request: Request, genero: str):
     # Leemos el archivo CSV
-    df_filtered = pd.read_csv("C:/Users/Coder/Documents/PI_ML_OPS/Datos/df_user_genre.csv")
+    df_filtered = pd.read_csv("/data/df_user_genre.csv")
 
     # Filtramos el DataFrame por el género dado
     df_filtered = df_filtered[df_filtered['genres'].str.lower() == genero.lower()]
@@ -80,7 +80,7 @@ async def UserForGenre(request: Request, genero: str):
 @app.get("/UsersRecommend/{year}", response_class=HTMLResponse)
 async def UsersRecommend(request: Request, year: int):
     # Leemos el archivo CSV
-    df_users_recommend = pd.read_csv("C:/Users/Coder/Documents/PI_ML_OPS/Datos/df_users_recommend.csv")
+    df_users_recommend = pd.read_csv("/data/df_users_recommend.csv")
 
     # Se realiza un filtrado por año
     df_filtered = df_users_recommend[df_users_recommend['release_date'] == year]
@@ -104,7 +104,7 @@ async def UsersRecommend(request: Request, year: int):
 @app.get("/UsersWorstDeveloper/{year}", response_class=HTMLResponse)
 async def UsersWorstDeveloper(request: Request, year: int):
     # Leemos el archivo CSV
-    df_worst_dev = pd.read_csv("C:/Users/Coder/Documents/PI_ML_OPS/Datos/df_worst_dev.csv")
+    df_worst_dev = pd.read_csv("/data/df_worst_dev.csv")
 
     # Filtrar por año
     df_filtered = df_worst_dev[df_worst_dev['release_date'] == year]
@@ -127,7 +127,7 @@ async def UsersWorstDeveloper(request: Request, year: int):
 @app.get("/sentiment_analysis/{developer}", response_class=HTMLResponse)
 async def sentiment_analysis(request: Request, developer: str):
     # Leemos el archivo CSV
-    df_sentiment = pd.read_csv("C:/Users/Coder/Documents/PI_ML_OPS/Datos/df_sentiment.csv")
+    df_sentiment = pd.read_csv("/data/df_sentiment.csv")
 
     # Convertimos a minúsculas tanto el nombre del desarrollador en el DataFrame como el proporcionado por el usuario
     df_sentiment['developer_lower'] = df_sentiment['developer'].str.lower()
