@@ -9,7 +9,7 @@ from fastapi.templating import Jinja2Templates
 
 app = FastAPI()
 
-rom fastapi import HTTPException
+from fastapi import HTTPException
 
 @app.exception_handler(HTTPException)
 async def http_exception_handler(request: Request, exc: HTTPException):
